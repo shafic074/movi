@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header .logo {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        nav {
+            position: absolute;
+            top: 20px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            transition: color 0.2s;
+        }
+        nav a:hover {
+            color: #007BFF;
+        }
+        .banner-container {
+            width: 250px;
+            max-width: 1200px;
+            margin: 20px auto;
+            overflow: hidden;
+            position: relative;
+        }
+        .banner-container img {
+            width: 250px;
+            display: none;
+            border-radius: 10px;
+        }
+        .banner-container img.active {
+            display: block;
+        }
+        .category {
+            margin: 20px 0;
+            position: relative;
+        }
+        .category h2 {
+            margin-bottom: 10px;
+        }
+        .image-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: calc(25% - 20px);
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        @media(max-width: 768px) {
+            .image-container img {
+                width: calc(100% - 20px);
+            }
+        }
+        @media(max-width: 768px) {
+            .image-container img {
+                width: calc(100% - 20px);
+            }
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .more-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            padding: 5px 10px;
+            font-size: 12px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: #fff;
+            transition: background-color 0.2s;
+        }
+        .more-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <img src="log.png" alt="Logo" class="logo">
+            <h1>Welcome</h1>
+        </div>
+        <nav>
+            <a href="#Best of 2025">2025</a>
+            <a href="sci.html">Sci-Fi</a>
+            <a href="#action">Action</a>
+            <a href="#stories">All</a>
+            <a href="tv shows.html">TV Shows</a>
+        </nav>
+    </header>
+
+    <div class="banner-container">
+        <img src="https://image.tmdb.org/t/p/original/9jSI7saUX9Qz0JLh19jX2ulEwL7.jpg" alt="Banner 1" class="active">
+        <img src="https://image.tmdb.org/t/p/original/lVDlngnmhQiG8GbnQBnFOAzpXLh.jpg" alt="Banner 2">
+        <img src="https://image.tmdb.org/t/p/original/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg" alt="Banner 3">
+        <img src="https://image.tmdb.org/t/p/original/eUdkKkRcyRV9TLs26vfimPFFmS3.jpg" alt="Banner 4">
+        <img src="https://image.tmdb.org/t/p/original/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg" alt="Banner 5">
+        <img src="https://image.tmdb.org/t/p/original/oCoTgC3UyWGfyQ9thE10ulWR7bn.jpg" alt="Banner 6">
+    </div>
+
+    <div class="category" id="Best of 2025">
+        <h2>Best of 2025</h2>
+        <button class="more-button" onclick="window.location.href='2025.html'">See More</button>
+        <div class="image-container">
+            <img src="https://image.tmdb.org/t/p/original/sf6j1SbgDf7VTjL1MRq5MAQSOyE.jpg" alt="Movie 1" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/from/THE%20BAYOU%20VJ%20EMMY%202025.mkv">
+            <img src="https://image.tmdb.org/t/p/original/ebqttF1Vjgde6uSFBEw9mta7Hd3.jpg" alt="Movie 2" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/JUNIOR%20NEW/HEART%20EYES%20JR%202025.mkv">
+            <img src="https://image.tmdb.org/t/p/original/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg" alt="Movie 3" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/10%20MARCH/24%20CHINA%205/Captain.America.Brave.New.World.2025.iNTERNAL1080.10bit.WEB.mkv">
+            <img src="https://image.tmdb.org/t/p/original/xvdkVb070AqZZpTBOZzbrnsGL3d.jpg" alt="Movie 4" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/9%20MARCH%20/THE%20ILAND/AGENTS%20%20VJ%20%20EMMY%202025.mkv">
+            <img src="https://image.tmdb.org/t/p/original/lI2uFlSEkwXKljqiry7coaJ6wIS.jpg" alt="Movie 5" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Counterstrike.mp4">
+            <img src="https://image.tmdb.org/t/p/original/g5PqsFFrayyRL1Ldgib2lMYuJXg.jpg" alt="Movie 6" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Demon%20city.mp4">
+            <img src="https://image.tmdb.org/t/p/original/skPPVeHoTTVVSJlb0Ib5vrqiuA4.jpg" alt="Movie 7" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Love%20Hurts.mp4">
+            <img src="https://image.tmdb.org/t/p/original/ut8snuINzOibbKnvpTnsGWQr4Nl.jpg" alt="Movie 8" data-video="https://katflix.xyz/RASHIDA/1st%20born%20Pablo/MAAMA%20NANYONJO/SINGLES/Fear%202023%20720%20Vj%20Junior@katflix.mp4">
+        </div>
+    </div>
+
+    <div class="category" id="sci-fi">
+        <h2>Sci-Fi</h2>
+        <button class="more-button" onclick="window.location.href='sci.html'">See More</button>
+        <div class="image-container">
+            <img src="movie9.png" alt="Movie 9" data-video="sci-fi1.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="sci-fi2.mp4">
+            <img src="movie1.png" alt="Movie 1" data-video="sci-fi3.mp4">
+            <img src="movie2.png" alt="Movie 2" data-video="sci-fi4.mp4">
+            <img src="movie3.png" alt="Movie 3" data-video="sci-fi5.mp4">
+            <img src="movie4.png" alt="Movie 4" data-video="sci-fi6.mp4">
+            <img src="movie5.png" alt="Movie 5" data-video="sci-fi7.mp4">
+            <img src="movie6.png" alt="Movie 6" data-video="sci-fi8.mp4">
+        </div>
+    </div>
+
+    <div class="category" id="action">
+        <h2>Action</h2>
+        <button class="more-button" onclick="window.location.href='Action.html'">See More</button>
+        <div class="image-container">
+            <img src="movie7.png" alt="Movie 7" data-video="action1.mp4">
+            <img src="movie8.png" alt="Movie 8" data-video="action2.mp4">
+            <img src="movie9.png" alt="Movie 9" data-video="action3.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="action4.mp4">
+            <img src="movie1.png" alt="Movie 1" data-video="action5.mp4">
+            <img src="movie2.png" alt="Movie 2" data-video="action6.mp4">
+            <img src="movie3.png" alt="Movie 3" data-video="action7.mp4">
+            <img src="movie4.png" alt="Movie 4" data-video="action8.mp4">
+        </div>
+    </div>
+
+    <div class="category" id="stories">
+        <h2>High School</h2>
+        <button class="more-button" onclick="window.location.href='high school.html'">See More</button>
+        <div class="image-container">
+            <img src="movie5.png" alt="Movie 5" data-video="stories1.mp4">
+            <img src="movie6.png" alt="Movie 6" data-video="stories2.mp4">
+            <img src="movie7.png" alt="Movie 7" data-video="stories3.mp4">
+            <img src="movie8.png" alt="Movie 8" data-video="stories4.mp4">
+            <img src="movie9.png" alt="Movie 9" data-video="stories5.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="stories6.mp4">
+            <img src="movie1.png" alt="Movie 1" data-video="stories7.mp4">
+            <img src="movie2.png" alt="Movie 2" data-video="stories8.mp4">
+        </div>
+    </div>
+
+    <div class="category" id="tv-shows">
+        <h2>Hot All Vjs</h2>
+        <button class="more-button" onclick="window.location.href='All.html'">See More</button>
+        <div class="image-container">
+            <img src="movie3.png" alt="Movie 3" data-video="tvshow1.mp4">
+            <img src="movie4.png" alt="Movie 4" data-video="tvshow2.mp4">
+            <img src="movie5.png" alt="Movie 5" data-video="tvshow3.mp4">
+            <img src="movie6.png" alt="Movie 6" data-video="tvshow4.mp4">
+            <img src="movie7.png" alt="Movie 7" data-video="tvshow5.mp4">
+            <img src="movie8.png" alt="Movie 8" data-video="tvshow6.mp4">
+            <img src="movie9.png" alt="Movie 9" data-video="tvshow7.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="tvshow8.mp4">
+        </div>
+    </div>
+
+    <div class="category" id="kids">
+        <h2>For kids</h2>
+        <button class="more-button" onclick="window.location.href='kids.html'">See More</button>
+        <div class="image-container">
+            <img src="movie9.png" alt="Movie 9" data-video="sci-fi1.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="sci-fi2.mp4">
+            <img src="movie1.png" alt="Movie 1" data-video="sci-fi3.mp4">
+            <img src="movie2.png" alt="Movie 2" data-video="sci-fi4.mp4">
+            <img src="movie3.png" alt="Movie 3" data-video="sci-fi5.mp4">
+            <img src="movie4.png" alt="Movie 4" data-video="sci-fi6.mp4">
+            <img src="movie5.png" alt="Movie 5" data-video="sci-fi7.mp4">
+            <img src="movie6.png" alt="Movie 6" data-video="sci-fi8.mp4">
+        </div>
+    </div>
+    
+    <div class="category" id="junior">
+        <h2>Vj Junior</h2>
+        <button class="more-button" onclick="window.location.href='junior.html'">See More</button>
+        <div class="image-container">
+            <img src="movie9.png" alt="Movie 9" data-video="sci-fi1.mp4">
+            <img src="movie10.png" alt="Movie 10" data-video="sci-fi2.mp4">
+            <img src="movie1.png" alt="Movie 1" data-video="sci-fi3.mp4">
+            <img src="movie2.png" alt="Movie 2" data-video="sci-fi4.mp4">
+            <img src="movie3.png" alt="Movie 3" data-video="sci-fi5.mp4">
+            <img src="movie4.png" alt="Movie 4" data-video="sci-fi6.mp4">
+            <img src="movie5.png" alt="Movie 5" data-video="sci-fi7.mp4">
+            <img src="movie6.png" alt="Movie 6" data-video="sci-fi8.mp4">
+        </div>
+    </div>
+    
+    <div class="video-modal" id="videoModal">
+        <button class="close-btn" onclick="closeVideo()">✖</button>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Banner rotation
+        let currentBanner = 0;
+        const banners = document.querySelectorAll('.banner-container img');
+        setInterval(() => {
+            banners[currentBanner].classList.remove('active');
+            currentBanner = (currentBanner + 1) % banners.length;
+            banners[currentBanner].classList.add('active');
+        }, 2000);
+
+        // Video modal
+        const images = document.querySelectorAll('.image-container img');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const videoSrc = image.getAttribute('data-video');
+                videoPlayer.querySelector('source').setAttribute('src', videoSrc);
+                videoPlayer.load();
+                videoModal.classList.add('active');
+                videoPlayer.play();
+            });
+        });
+
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>

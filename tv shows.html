@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Live Streaming</title>
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* TV Channel Box */
+        .tv-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #222;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .tv-box img {
+            width: 100px;
+            height: 70px;
+            border-radius: 5px;
+        }
+
+        .tv-box .tv-info {
+            flex-grow: 1;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .tv-box button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .tv-box button:hover {
+            background-color: #ff0a16;
+        }
+
+        /* Slider Section */
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .slider img {
+            width: 120px;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        /* Large TV Box */
+        .large-tv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .large-tv img {
+            width: 150px;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        .large-tv button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tv-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .large-tv {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tv-box img, .large-tv img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>TV Live Streaming</h1>
+
+    <!-- TV Boxes -->
+    <div class="tv-box">
+        <img src="https://via.placeholder.com/100x70" alt="TV 1">
+        <div class="tv-info">
+            <h3>BuBu TV</h3>
+        </div>
+        <button onclick="watchLive('channel1.mp4')">Watch Live Now</button>
+    </div>
+
+    <div class="tv-box">
+        <img src="https://via.placeholder.com/100x70" alt="TV 2">
+        <div class="tv-info">
+            <h3>BuBu TV</h3>
+        </div>
+        <button onclick="watchLive('channel2.mp4')">Watch Live Now</button>
+    </div>
+
+    <div class="tv-box">
+        <img src="https://via.placeholder.com/100x70" alt="TV 3">
+        <div class="tv-info">
+            <h3>BuBu TV</h3>
+        </div>
+        <button onclick="watchLive('channel3.mp4')">Watch Live Now</button>
+    </div>
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <img src="https://via.placeholder.com/120x80" alt="Slide 1">
+        <img src="https://via.placeholder.com/120x80" alt="Slide 2">
+        <img src="https://via.placeholder.com/120x80" alt="Slide 3">
+    </div>
+
+    <!-- Large TV Box -->
+    <div class="large-tv">
+        <img src="https://via.placeholder.com/150x80" alt="TV Large">
+        <button onclick="watchLive('channel4.mp4')">Watch Live Now</button>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); display:flex; align-items:center; justify-content:center; flex-direction:column;">
+        <button onclick="closeModal()" style="background:red; color:white; padding:10px; border:none; font-size:16px; cursor:pointer;">Close</button>
+        <video id="videoPlayer" controls style="width:90%; max-width:800px;"></video>
+    </div>
+
+    <script>
+        function watchLive(videoSrc) {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.src = videoSrc;
+            document.getElementById('videoModal').style.display = 'flex';
+            videoPlayer.play();
+        }
+
+        function closeModal() {
+            const videoPlayer = document.getElementById('videoPlayer');
+            videoPlayer.pause();
+            document.getElementById('videoModal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>high school Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h2>High school Movies</h2>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="sci-fi1.png" alt="Sci-Fi Movie 1" data-video="sci-fi1.mp4">
+        <img src="sci-fi2.png" alt="Sci-Fi Movie 2" data-video="sci-fi2.mp4">
+        <img src="sci-fi3.png" alt="Sci-Fi Movie 3" data-video="sci-fi3.mp4">
+        <img src="sci-fi4.png" alt="Sci-Fi Movie 4" data-video="sci-fi4.mp4">
+        <img src="sci-fi5.png" alt="Sci-Fi Movie 5" data-video="sci-fi5.mp4">
+        <img src="sci-fi6.png" alt="Sci-Fi Movie 6" data-video="sci-fi6.mp4">
+        <img src="sci-fi7.png" alt="Sci-Fi Movie 7" data-video="sci-fi7.mp4">
+        <img src="sci-fi8.png" alt="Sci-Fi Movie 8" data-video="sci-fi8.mp4">
+        <img src="sci-fi9.png" alt="Sci-Fi Movie 9" data-video="sci-fi9.mp4">
+        <img src="sci-fi10.png" alt="Sci-Fi Movie 10" data-video="sci-fi10.mp4">
+        <img src="sci-fi11.png" alt="Sci-Fi Movie 11" data-video="sci-fi11.mp4">
+        <img src="sci-fi12.png" alt="Sci-Fi Movie 12" data-video="sci-fi12.mp4">
+        <img src="sci-fi13.png" alt="Sci-Fi Movie 13" data-video="sci-fi13.mp4">
+        <img src="sci-fi14.png" alt="Sci-Fi Movie 14" data-video="sci-fi14.mp4">
+        <img src="sci-fi15.png" alt="Sci-Fi Movie 15" data-video="sci-fi15.mp4">
+        <img src="sci-fi16.png" alt="Sci-Fi Movie 16" data-video="sci-fi16.mp4">
+        <img src="sci-fi17.png" alt="Sci-Fi Movie 17" data-video="sci-fi17.mp4">
+        <img src="sci-fi18.png" alt="Sci-Fi Movie 18" data-video="sci-fi18.mp4">
+        <img src="sci-fi19.png" alt="Sci-Fi Movie 19" data-video="sci-fi19.mp4">
+        <img src="sci-fi20.png" alt="Sci-Fi Movie 20" data-video="sci-fi20.mp4">
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <button class="close-btn" onclick="closeVideo()">✖</button>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Video modal
+        const images = document.querySelectorAll('.image-container img');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const videoSrc = image.getAttribute('data-video');
+                videoPlayer.querySelector('source').setAttribute('src', videoSrc);
+                videoPlayer.load();
+                videoModal.classList.add('active');
+                videoPlayer.play();
+            });
+        });
+
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>

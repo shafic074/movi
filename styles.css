@@ -1,0 +1,192 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+}
+
+
+.movies {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #111;
+}
+
+
+
+.movie {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+}
+
+.movie img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.movie img:hover {
+    transform: scale(1.05);
+}
+
+.ads {
+    text-align: center;
+    background-color: #222;
+    color: #aaa;
+    padding: 10px;
+    margin: 20px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .movies {
+        flex-direction: column ;
+        align-items: center;
+    }
+
+    .movie {
+        width: 90%;
+    }
+}
+
+tv show
+
+ /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body Styling */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #141414;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Header */
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        /* TV Channel Box */
+        .tv-box {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #222;
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+        }
+
+        .tv-box img {
+            width: 100px;
+            height: 70px;
+            border-radius: 5px;
+        }
+
+        .tv-box .tv-info {
+            flex-grow: 1;
+            padding-left: 10px;
+            text-align: left;
+        }
+
+        .tv-box button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .tv-box button:hover {
+            background-color: #ff0a16;
+        }
+
+        /* Slider Section */
+        .slider {
+            display: flex;
+            overflow-x: auto;
+            gap: 10px;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        .slider img {
+            width: 120px;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        /* Large TV Box */
+        .large-tv {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #222;
+            padding: 10px;
+            border-radius: 8px;
+        }
+
+        .large-tv img {
+            width: 150px;
+            height: 80px;
+            border-radius: 5px;
+        }
+
+        .large-tv button {
+            background-color: #e50914;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .tv-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .large-tv {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .tv-box img, .large-tv img {
+                width: 100%;
+                max-width: 250px;
+                height: auto;
+            }
+        }
