@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 hot movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h2>Best of 2025 Movies</h2>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="https://image.tmdb.org/t/p/original/sf6j1SbgDf7VTjL1MRq5MAQSOyE.jpg" alt="The Bayou" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/from/THE%20BAYOU%20VJ%20EMMY%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/ebqttF1Vjgde6uSFBEw9mta7Hd3.jpg" alt="Heart Eyes" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/JUNIOR%20NEW/HEART%20EYES%20JR%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg" alt="Captain America: Brave New World" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/10%20MARCH/24%20CHINA%205/Captain.America.Brave.New.World.2025.iNTERNAL1080.10bit.WEB.mkv">
+        <img src="https://image.tmdb.org/t/p/original/xvdkVb070AqZZpTBOZzbrnsGL3d.jpg" alt="Agents" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/9%20MARCH%20/THE%20ILAND/AGENTS%20%20VJ%20%20EMMY%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/lI2uFlSEkwXKljqiry7coaJ6wIS.jpg" alt="Counterattack" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Counterstrike.mp4">
+        <img src="https://image.tmdb.org/t/p/original/g5PqsFFrayyRL1Ldgib2lMYuJXg.jpg" alt="Demon City" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Demon%20city.mp4">
+        <img src="https://image.tmdb.org/t/p/original/skPPVeHoTTVVSJlb0Ib5vrqiuA4.jpg" alt="Love Hurts" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/ICE%20P%20NEW/Love%20Hurts.mp4">
+        <img src="https://image.tmdb.org/t/p/original/hMJRFQarUL73K6FIbhvO4A8uEvm.jpg" alt="One of Them Days" data-video="https://pearlpix.xyz/moviesempya/days.mp4">
+        <img src="https://image.tmdb.org/t/p/original/ttN5D6GKOwKWHmCzDGctAvaNMAi.jpg" alt="My Fault: London" data-video="https://image.tmdb.org/t/p/original/ttN5D6GKOwKWHmCzDGctAvaNMAi.jpg">
+        <img src="https://image.tmdb.org/t/p/original/sEma5RN8aZ5Yu2Dkefyn5ULdlc1.jpg" alt="La Dolce Villa" data-video="https://pearlpix.xyz/moviesempya/dolce.mp4
+">
+        <img src="https://image.tmdb.org/t/p/original/baRk5YLkKKYrnfcVjpJ5iEUC0zj.jpg" alt="The Legend of Condor Hero: What is Love" data-video="https://pearlpix.xyz/moviesempya/condor.mp4">
+        <img src="https://image.tmdb.org/t/p/original/sT8Z14RDCAd6szzxzWFAU4xcMwg.jpg" alt="Valiant One" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/from/VALIANT%20ONE%20VJ%20EMMY%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/oCoTgC3UyWGfyQ9thE10ulWR7bn.jpg" alt="Companion" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/THE%20COMPANION%20JR%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg" alt="The Gorge" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/The.Gorge.mp4">
+        <img src="https://image.tmdb.org/t/p/original/tHkFVhZji6o9UyHXezAeFma8IOW.jpg" alt="Into the Deep" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/Into.The.Deep%202%202025.mp4">
+        <img src="https://image.tmdb.org/t/p/original/uX40XUTBJFIskKmpThelUnRXelq.jpg" alt="Wish You Were Here" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/Wish.You.Were.Here.2025.jr.mkv">
+        <img src="https://image.tmdb.org/t/p/original/p6Zz0gETvkC33Pst1h6sh9Js6x.jpg" alt="Den of Thieves 2: Pantera" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/DEN%20OF%20THIEVES%202.mp4">
+        <img src="https://image.tmdb.org/t/p/original/TVvIyCsFCmLk9MRLbAZi4X8f32.jpg" alt="Sniper: The Last Stand" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/SNIPER%20LAST%20STAND%20JR%202025.mp4">
+        <img src="http://image.tmdb.org/t/p/original/3L3l6LsiLGHkTG4RFB2aBA6BttB.jpg" alt="Back in Action" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/BACK%20IN%20ACTION%20JR%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/x4nWnfgJvL045rcUCSJzfgIIY9i.jpg" alt="Fight or Flight" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/14%20march/ICE%20P/Fight%20or%20flight%20@qmoviesclips.mp4">
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <button class="close-btn" onclick="closeVideo()">✖</button>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Video modal
+        const images = document.querySelectorAll('.image-container img');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const videoSrc = image.getAttribute('data-video');
+                videoPlayer.querySelector('source').setAttribute('src', videoSrc);
+                videoPlayer.load();
+                videoModal.classList.add('active');
+                videoPlayer.play();
+            });
+        });
+
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
