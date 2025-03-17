@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h2>Action Movies</h2>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="https://image.tmdb.org/t/p/original/sZDX7WPOcQKBN3pJP0HaCvUvIMg.jpg" alt="Go For Broke" data-video="https://jtzmag.com/movie/goforbroke.html">
+        <img src="https://image.tmdb.org/t/p/original/87aWrVqaVhXhblhO7sYHLC2y8TT.jpg" alt="Wolf Warrior 2" data-video="https://jtzmag.com/movie/wolfworrior.html">
+        <img src="https://image.tmdb.org/t/p/original/ioG9sQbDV1yqOvB7EDlF6jBMKCv.jpg" alt="The Legend II" data-video="https://jtzmag.com/movie/fongsaiyuk.html">
+        <img src="https://image.tmdb.org/t/p/original/qZKKwXyZ92K0mIRpf2FbCkQa7oO.jpg" alt="Return of the Great General" data-video="https://jtzmag.com/movie/KINGDOM.html">
+        <img src="https://image.tmdb.org/t/p/original/67ZsRKbItt6B1yHlsJKgfPWOyuJ.jpg" alt="Shadow Master" data-video="https://jtzmag.com/movie/shadowmaster.html">
+        <img src="https://image.tmdb.org/t/p/original/scTlqmig3VJzuwlPhBLmtIdtRes.jpg" alt="Speed Fight" data-video="https://storage.pearlpix.xyz/Series/speed%20fight.mp4">
+        <img src="https://image.tmdb.org/t/p/original/yjDdBBUEBMvyUiVohZ8T7W2IFl6.jpg" alt="Kung Fu Games" data-video="https://storage.pearlpix.xyz/Series/kungfu%20games.mp4">
+        <img src="https://image.tmdb.org/t/p/original/5kCEHZnUeAZFJvE3l8K5OYjIwjj.jpg" alt="Kill Shot" data-video="https://storage.pearlpix.xyz/new111/Kill.Shot.mp4">
+        <img src="https://image.tmdb.org/t/p/original/aTogcymFfYXYb2sx950ntIpgOJe.jpg" alt="The Roundup" data-video="https://storage.pearlpix.xyz/new111/The.Roundup.mp4">
+        <img src="https://image.tmdb.org/t/p/original/3u9RcXutnvVvdi9QwesTDSJA7p.jpg" alt="Desperate Sniper" data-video="https://pearlpix.xyz/moviesempya/desperate.mkv">
+        <img src="https://image.tmdb.org/t/p/original/eEkAY5veAnwxUOOlpF62KawkFO9.jpg" alt="Gunner    2024
+" data-video="https://storage.pearlpix.xyz/Series/gunner.mp4">
+        <img src="https://image.tmdb.org/t/p/original/oGythE98MYleE6mZlGs5oBGkux1.jpg" alt="Bad Boys: Ride or Die" data-video="https://s3.eu-west-1.wasabisys.com/storage.pearlpix.xyz/me/Bad.Boys.Ride.Or.Die.mp4">
+        <img src="https://image.tmdb.org/t/p/original/AdkFsbEQyJKB6dJgr6VjoFkujOX.jpg" alt="Iron Kung Fu Fist" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/14%20march/ICE%20P/Fight%20or%20flight%20@qmoviesclips.mp4">
+        <img src="https://image.tmdb.org/t/p/original/x4nWnfgJvL045rcUCSJzfgIIY9i.jpg" alt="Fight or Flight" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/14%20march/ICE%20P/Fight%20or%20flight%20@qmoviesclips.mp4">
+        <img src="https://image.tmdb.org/t/p/original/iwsMu0ehRPbtaSxqiaUDQB9qMWT.jpg" alt="Expend4bles" data-video="https://katflix.xyz/RASHIDA/1st%20born%20Pablo/NN/Expend4bles%202023.720%20Vj%20EMMY%40katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/oE7xtGDqZnr7tFHfwb8oM9iRW6H.jpg" alt="Ballerina" data-video="https://katflix.xyz/RASHIDA/1st%20born%20Pablo/NN/Ballerina.2023.720%20Vj%20EMMY@katflix.mkv">
+        <img src="https://image.tmdb.org/t/p/original/lVDlngnmhQiG8GbnQBnFOAzpXLh.jpg" alt="Righteous Thieves   " data-video="https://kaguje.xyz/KAGUJE/SINGLE/Righteous%20Thieves%202023.720%20Vj%20JUNIOR@katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/oLMzL9cpBBnkMGF8j4Z5Dbi2Z5u.jpg" alt="Dead Shot" data-video="https://kaguje.xyz/KAGUJE/SINGLE/Dead%20Shot%202023.720%20Vj%20JUNIOR@katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/y2d2SBqK33mGOG2CqAYMo3YbWE4.jpg" alt="Assassin Club" data-video="https://katflix.xyz/RASHIDA/1st%20born%20Pablo/MAAMA%20NANYONJO/SINGLES/Assassin%20Club%202023.720%20Vj%20EMMY@katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/y3AeW200hqGLxoPyHMDHpzudylz.jpg" alt="Black Lotus" data-video="https://kaguje.xyz/KAGUJE/SINGLE/Black%20Lotus%202023.720%20Vj%20EMMY@katflix.mp4">
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <button class="close-btn" onclick="closeVideo()">✖</button>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Video modal
+        const images = document.querySelectorAll('.image-container img');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const videoSrc = image.getAttribute('data-video');
+                videoPlayer.querySelector('source').setAttribute('src', videoSrc);
+                videoPlayer.load();
+                videoModal.classList.add('active');
+                videoPlayer.play();
+            });
+        });
+
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
