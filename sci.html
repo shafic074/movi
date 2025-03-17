@@ -62,6 +62,70 @@
         }
         .video-modal {
             display: none;
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sci-Fi Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        .video-modal {
+            display: none;
             position: fixed;
             top: 0;
             left: 0;
@@ -103,26 +167,26 @@
     </header>
 
     <div class="image-container">
-        <img src="sci-fi1.png" alt="Sci-Fi Movie 1" data-video="sci-fi1.mp4">
-        <img src="sci-fi2.png" alt="Sci-Fi Movie 2" data-video="sci-fi2.mp4">
-        <img src="sci-fi3.png" alt="Sci-Fi Movie 3" data-video="sci-fi3.mp4">
-        <img src="sci-fi4.png" alt="Sci-Fi Movie 4" data-video="sci-fi4.mp4">
-        <img src="sci-fi5.png" alt="Sci-Fi Movie 5" data-video="sci-fi5.mp4">
-        <img src="sci-fi6.png" alt="Sci-Fi Movie 6" data-video="sci-fi6.mp4">
-        <img src="sci-fi7.png" alt="Sci-Fi Movie 7" data-video="sci-fi7.mp4">
-        <img src="sci-fi8.png" alt="Sci-Fi Movie 8" data-video="sci-fi8.mp4">
-        <img src="sci-fi9.png" alt="Sci-Fi Movie 9" data-video="sci-fi9.mp4">
-        <img src="sci-fi10.png" alt="Sci-Fi Movie 10" data-video="sci-fi10.mp4">
-        <img src="sci-fi11.png" alt="Sci-Fi Movie 11" data-video="sci-fi11.mp4">
-        <img src="sci-fi12.png" alt="Sci-Fi Movie 12" data-video="sci-fi12.mp4">
-        <img src="sci-fi13.png" alt="Sci-Fi Movie 13" data-video="sci-fi13.mp4">
-        <img src="sci-fi14.png" alt="Sci-Fi Movie 14" data-video="sci-fi14.mp4">
-        <img src="sci-fi15.png" alt="Sci-Fi Movie 15" data-video="sci-fi15.mp4">
-        <img src="sci-fi16.png" alt="Sci-Fi Movie 16" data-video="sci-fi16.mp4">
-        <img src="sci-fi17.png" alt="Sci-Fi Movie 17" data-video="sci-fi17.mp4">
-        <img src="sci-fi18.png" alt="Sci-Fi Movie 18" data-video="sci-fi18.mp4">
-        <img src="sci-fi19.png" alt="Sci-Fi Movie 19" data-video="sci-fi19.mp4">
-        <img src="sci-fi20.png" alt="Sci-Fi Movie 20" data-video="sci-fi20.mp4">
+        <img src="https://image.tmdb.org/t/p/original/hU42CRk14JuPEdqZG3AWmagiPAP.jpg" alt="A Quiet Place: Day One" data-video="https://storage.pearlpix.xyz/me/A%20Quiet%20Place%203%20%20Day%20One%20vj%20ICE%20p.mp4">
+        <img src="https://image.tmdb.org/t/p/original/8cdWjvZQUExUUTzyp4t6EDMubfO.jpg" alt="Deadpool & Wolverine" data-video="https://storage.pearlpix.xyz/new111/Deadpool%20%20%20Wolverine.mp4">
+        <img src="https://image.tmdb.org/t/p/original/FBfA7V41ezvP1UTx9BTUS2BLsq.jpg" alt="The Titan" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/THE%20TITANS.1080HP.Jr.A-B@(E.L.Pro+256782778952).mp4">
+        <img src="https://image.tmdb.org/t/p/original/czh8HOhsbBUKoKsmRmLQMCLHUev.jpg" alt="Distant" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/DISTANT%20JR%202025.mp4">
+        <img src="https://image.tmdb.org/t/p/original/briDKf5nrLzox2zcI6pquKeqWz8.jpg" alt="Repo Men" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/REMAKES/repo%20men%20jr.mp4">
+        <img src="https://image.tmdb.org/t/p/original/nIX0YgXdZ61Y0DfL1Ivrajtjk21.jpg" alt="The Tank" data-video="https://katflix.xyz/RASHIDA/1st%20born%20Pablo/MAAMA%20NANYONJO/SINGLES/The%20Tank%202023%20720%20Vj%20EMMY@katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/qnqGbB22YJ7dSs4o6M7exTpNxPz.jpg" alt="Ant-Man and the Wasp: Quantumania" data-video="https://kaguje.xyz/KAGUJE/SINGLE/Ant-Man%20and%20the%20Wasp%20Quantumania%202023.720%20Vj%20JUNIOR@katflix.mp4">
+        <img src="https://image.tmdb.org/t/p/original/7iMBZzVZtG0oBug4TfqDb9ZxAOa.jpg" alt="The Gorge" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/The.Gorge.mp4">
+        <img src="https://image.tmdb.org/t/p/original/oCoTgC3UyWGfyQ9thE10ulWR7bn.jpg" alt="Companion" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/THE%20COMPANION%20JR%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/Amt659uWYqbLCZ23BVrbDK9T1K0.jpg" alt="Hunting the Phantom" data-video="https://pearlpix.xyz/moviesempya/Hunting.mkv">
+        <img src="https://image.tmdb.org/t/p/original/vlc95gl3PtrjxSEuM8RhTtSm2xU.jpg" alt="Valerian and the City of a Thousand Planets" data-video="https://pearlpix.xyz/moviesempya/Valerian.mp4">
+        <img src="https://image.tmdb.org/t/p/original/pzIddUEMWhWzfvLI3TwxUG2wGoi.jpg" alt="Captain America: Brave New World" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/new%20new%20nerw/10%20MARCH/24%20CHINA%205/Captain.America.Brave.New.World.2025.iNTERNAL1080.10bit.WEB.mkv">
+        <img src="https://image.tmdb.org/t/p/original/OZCmgXARilxgvmBEFW7IqPicpG.jpg" alt="Max Cloud" data-video="https://jtzmag.com/movie/maxcloud.html">
+        <img src="https://image.tmdb.org/t/p/original/2W4ZvACURDyhiNnSIaFPHfNbny3.jpg" alt="Skylines" data-video="https://jtzmag.com/movie/Skyline.html">
+        <img src="https://image.tmdb.org/t/p/original/kZ2nZw8D681aphje8NJi8EfbL1U.jpg" alt="Gravity" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/REMAKES/GRAVITY.JR.mkv">
+        <img src="https://image.tmdb.org/t/p/original/czh8HOhsbBUKoKsmRmLQMCLHUev.jpg" alt="Distant" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/DISTANT%20JR%202025.mp4">
+        <img src="https://image.tmdb.org/t/p/original/tI8ocADh22GtQFV28vGHaBZVb0U.jpg" alt="Artemis Fowl" data-video="https://s3.eu-west-1.wasabisys.com/storage.pearlpix.xyz/1000/ARTEMIS%20FOWL.1080HP.Jr.A-B@(E.L.Pro+256782778952).mp4">
+        <img src="https://image.tmdb.org/t/p/original/AuEzNLF8yvzd169guYEFisqvy5z.jpg" alt="Max Steel" data-video="https://storage.pearlpix.xyz/10000/Max%20Steel.1080HP.Jr.A-B@_E.L.Pro+256782778952_.mp4">
+        <img src="https://image.tmdb.org/t/p/original/3dSivDtOuyxLDxPH4v2tcNG1fP7.jpg" alt="The Creator" data-video="https://storage.pearlpix.xyz/Jim/creator.mp4">
+        <img src="https://image.tmdb.org/t/p/original/nFWhttU8PM50t25NPdy7PE7rv3G.jpg" alt="Pacific Rim: Uprising" data-video="https://storage.pearlpix.xyz/newnew/pricfic%20rim%202.mp4">
     </div>
 
     <div class="video-modal" id="videoModal">
