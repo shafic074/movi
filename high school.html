@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>high school Movies</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            position: relative;
+            width: 100%;
+            height: 70vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+        }
+        header .content {
+            position: relative;
+            z-index: 1;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+        }
+        .image-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            justify-items: center;
+            padding: 20px;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 200px;
+            cursor: pointer;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+            border-color: #000;
+        }
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .video-modal.active {
+            display: flex;
+        }
+        .video-modal video {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 10px;
+        }
+        .video-modal .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <video autoplay muted loop>
+            <source src="background.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="content">
+            <h2>High school Movies</h2>
+        </div>
+    </header>
+
+    <div class="image-container">
+        <img src="https://image.tmdb.org/t/p/original/890UDXYal6i8A9NbMV5TAxZpOzH.jpg" alt="Sweethearts" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/Sweethearts.mp4">
+        <img src="https://image.tmdb.org/t/p/original/iPs5OlKJsFVFW9XyskRVvQBmHC2.jpg" alt="Bad Genius" data-video="https://s3.eu-west-1.wasabisys.com/storage.pearlpix.xyz/Jim/Bad%20Genius%20by%20Vj%20Junior.mp4">
+        <img src="https://image.tmdb.org/t/p/original/k2ySukuAiAarLns0yttKS3jg85Y.jpg" alt="Incoming" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/Sidelined-The-QB-and-Me_720p%20VJ%20SOUL.mp4">
+        <img src="https://image.tmdb.org/t/p/original/ybeKSwYfxesZgcHMvMIgRLfRUn5.jpg" alt="Senior Skip Day" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/SENIOR%20SKIP%20%20-%20KEVO.mkv">
+        <img src="https://image.tmdb.org/t/p/original/FRqnYDjbstsCgLSJJ3SifOh2ca.jpg" alt="Just Married" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/dec%202024%20single%20movies/Just%20Married%20Ulio.mp4">
+        <img src="https://image.tmdb.org/t/p/original/l8B01BFBpIyycO2DopROessWzQU.jpg" alt="John Tucker Must Die" data-video="https://storage.pearlpix.xyz/1000/John%20tucker%20must%20die.mp4">
+        <img src="https://image.tmdb.org/t/p/original/6BngDhDNfbBjhVFWDT2yMve32vi.jpg" alt="Never Been Kissed" data-video="https://storage.pearlpix.xyz/Jim/never%20been%20kissed.mp4">
+        <img src="https://image.tmdb.org/t/p/original/gD72DhJ7NbfxvtxGiAzLaa0xaoj.jpg" alt="No Hard Feelings " data-video="https://video.wixstatic.com/video/bb3421_17d4716f7e7c48dfbbbad1b9138a2d2b/1080p/mp4/file.mp4">
+        <img src="https://image.tmdb.org/t/p/original/cTO5HOwOhE5H5X4HEVJniS0MA49.jpg" alt="Love by the 10th Date" data-video="http://moochatplus.net/movies/Love%20By%20the%2010th%20Date.mp4">
+        <img src="https://image.tmdb.org/t/p/original/AlnBUoKzzPnczrzzxuh0SYwDa3Z.jpg" alt="LOL" data-video="https://moochatplus.net/movies/LOL%20(Laugh%20Out%20Loud)%202021.mp4">
+        <img src="https://image.tmdb.org/t/p/original/uhOXS17gRpTwA85WsZLlYFK3rz0.jpg" alt="Upgraded" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/UPGRADED%20JR%202025.mp4">
+        <img src="https://image.tmdb.org/t/p/original/iR1bVfURbN7r1C46WHFbwCkVve.jpg" alt="About Time" data-video="https://pearlpix.xyz/moviesempya/abouttime.mkv">
+        <img src="https://image.tmdb.org/t/p/original/48P3lTdsg19OfmrD5av0VJYcjLM.jpg" alt="Sylvie's Love" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/11111/SYLVIES%20LOVE%20JR%202025.mkv">
+        <img src="https://image.tmdb.org/t/p/original/Y5P4Q3q8nrruZ9aD3wXeJS2Plg.jpg" alt="The Idea of You" data-video="https://jtzmag.com/mov/theideaofyou.html">
+        <img src="https://image.tmdb.org/t/p/original/uQxjZGU6rxSPSMeAJPJQlmfV3ys.jpg" alt="After Everything" data-video="https://storage.pearlpix.xyz/Jim/AFTER%205%20EVERYTHING.1080HP.Jr.A-B@_E.L.Pro+256782778952_2023.mp4">
+        <img src="https://image.tmdb.org/t/p/original/hayr56csDzCSADaejgrRMVPHyDy.jpg" alt="Crush" data-video="https://s3.eu-west-1.wasabisys.com/storage.pearlpix.xyz/1000/CRUSH%20____VJ%20JR%20DE%20INCREDIBLE.mp4">
+        <img src="https://image.tmdb.org/t/p/original/ivo09vYN76w3epqAv9jS9BEXi5N.jpg" alt="How to Build a Better Boy" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/dec%202024%20single%20movies/HOW%20TO%20BUILD%20A%20BETTER%20BOY.1080HP.Jr.A-B@(E.L.Pro+256782778952).mp4">
+        <img src="https://image.tmdb.org/t/p/original/hybHtrMWPfz0zUZekAVbCO6X7hB.jpg" alt="Love Birds" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/LOVEBIRDS.1080HP.Jr.A-B@(E.L.Pro+256782778952).mp4">
+        <img src="https://image.tmdb.org/t/p/original/aEqtJDj8MvSDQwzggvcOfFTZMw.jpg" alt="The Proposal" data-video="https://s3.eu-west-1.wasabisys.com/pearlpix.xyz/JAN%20SINGLE/The%20Proposal.1080HP.Jr.A-B@(E.L.Pro+256782778952).mp4">
+        <img src="https://image.tmdb.org/t/p/original/moogpu8rNkEjTgFyLXwhPghft5w.jpg" alt="After Ever Happy" data-video="https://storage.pearlpix.xyz/Jim/AFTER%204.EVER%20HAPPY.1080HP.Jr.A-B@_E.L.Pro+256782778952_.mp4">
+    </div>
+
+    <div class="video-modal" id="videoModal">
+        <button class="close-btn" onclick="closeVideo()">✖</button>
+        <video id="videoPlayer" controls>
+            <source src="" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <script>
+        // Video modal
+        const images = document.querySelectorAll('.image-container img');
+        const videoModal = document.getElementById('videoModal');
+        const videoPlayer = document.getElementById('videoPlayer');
+
+        images.forEach(image => {
+            image.addEventListener('click', () => {
+                const videoSrc = image.getAttribute('data-video');
+                videoPlayer.querySelector('source').setAttribute('src', videoSrc);
+                videoPlayer.load();
+                videoModal.classList.add('active');
+                videoPlayer.play();
+            });
+        });
+
+        function closeVideo() {
+            videoModal.classList.remove('active');
+            videoPlayer.pause();
+            videoPlayer.currentTime = 0;
+        }
+    </script>
+</body>
+</html>
